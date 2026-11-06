@@ -1,0 +1,523 @@
+/* Reset Geral */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: black;
+    background-color: rgb(46, 46, 107);
+    cursor: default;
+    overflow-x: hidden;
+}
+
+/* Header e Navegação */
+header {
+    background-color: rgb(7, 7, 55);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: rgb(243, 243, 243);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: rgb(50, 199, 205);
+}
+
+/* Seções e Cards */
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section h1,
+section h2 {
+    color: rgb(146, 70, 218);
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form button {
+    background-color: rgb(7, 7, 55);
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-top: 15px;
+}
+
+form button:hover {
+    background-color: rgb(60, 25, 93);
+}
+
+/* Footer */
+footer {
+    background-color: rgb(50, 199, 205);
+    color: #2e1a05;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* ========================================= */
+/* FOTO DE PERFIL */
+/* ========================================= */
+
+#hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Área da foto */
+.foto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Foto circular */
+.foto-perfil {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 6px solid rgb(50, 199, 205);
+
+    box-shadow:
+        0 0 20px rgb(50, 199, 205),
+        0 0 40px rgba(50, 199, 205, 0.7),
+        0 0 60px rgba(50, 199, 205, 0.5);
+
+    transition: 0.5s;
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+/* Efeito quando passar o mouse */
+.foto-perfil:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px rgb(50, 199, 205),
+        0 0 60px rgb(146, 70, 218),
+        0 0 90px rgb(50, 199, 205);
+}
+
+/* Animação da foto */
+@keyframes flutuar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================= */
+/* RESPONSIVIDADE DA FOTO */
+/* ========================================= */
+
+@media (max-width: 600px) {
+
+    .foto-perfil {
+        width: 170px;
+        height: 170px;
+    }
+
+    #hero {
+        padding: 60px 15px;
+    }
+}
+
+
+/* ========================================= */
+/* EFEITO LANTERNA CONTÍNUA */
+/* ========================================= */
+
+.cursor-light {
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(0, 170, 255, 0.45) 0%,
+        rgba(0, 170, 255, 0.15) 50%,
+        transparent 70%
+    );
+
+    z-index: 999999;
+
+    mix-blend-mode: screen;
+
+    transition: transform 0.05s ease-out;
+}
+
+
+/* ========================================= */
+/* TELA DE ENTRADA - ESTILO JOGO POKÉMON */
+/* ========================================= */
+
+body::before {
+
+    content: "BEM-VINDO À BIOGRAFIA DE PELEZIN";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(30px, 5vw, 65px);
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(50, 199, 205, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(5, 5, 35),
+            rgb(7, 7, 55),
+            rgb(35, 35, 100)
+        );
+
+    text-shadow:
+        3px 3px 0 rgb(7, 7, 55),
+        0 0 10px rgb(50, 199, 205),
+        0 0 25px rgb(50, 199, 205),
+        0 0 45px rgb(146, 70, 218);
+
+    border-bottom: 6px solid rgb(50, 199, 205);
+
+    pointer-events: none;
+
+    animation:
+        entradaPokemon 5s ease forwards,
+        brilhoPokemon 1.5s ease-in-out infinite alternate;
+}
+
+
+/* ========================================= */
+/* POKÉBOLA FLUTUANTE */
+/* ========================================= */
+
+body::after {
+
+    content: "⚪";
+
+    position: fixed;
+
+    z-index: 10000000;
+
+    top: 18%;
+
+    right: 13%;
+
+    width: 90px;
+
+    height: 90px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 70px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgb(220, 40, 40) 0%,
+            rgb(220, 40, 40) 46%,
+            rgb(20, 20, 20) 46%,
+            rgb(20, 20, 20) 54%,
+            rgb(245, 245, 245) 54%,
+            rgb(245, 245, 245) 100%
+        );
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px rgb(50, 199, 205),
+        0 0 45px rgba(146, 70, 218, 0.8);
+
+    animation:
+        pokebolaFlutuando 2.5s ease-in-out infinite,
+        pokebolaSaindo 5s forwards;
+
+    pointer-events: none;
+}
+
+
+/* ========================================= */
+/* CENTRO DA POKÉBOLA */
+/* ========================================= */
+
+body::after {
+    text-shadow:
+        0 0 0 white;
+}
+
+
+/* ========================================= */
+/* ANIMAÇÃO DA ENTRADA */
+/* ========================================= */
+
+@keyframes entradaPokemon {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* ========================================= */
+/* BRILHO DO TEXTO */
+/* ========================================= */
+
+@keyframes brilhoPokemon {
+
+    from {
+
+        text-shadow:
+            3px 3px 0 rgb(7, 7, 55),
+            0 0 10px rgb(50, 199, 205),
+            0 0 20px rgb(50, 199, 205);
+
+    }
+
+    to {
+
+        text-shadow:
+            3px 3px 0 rgb(7, 7, 55),
+            0 0 15px rgb(50, 199, 205),
+            0 0 35px rgb(50, 199, 205),
+            0 0 60px rgb(146, 70, 218);
+
+    }
+
+}
+
+
+/* ========================================= */
+/* POKÉBOLA FLUTUANDO */
+/* ========================================= */
+
+@keyframes pokebolaFlutuando {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(-8deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-35px)
+            rotate(8deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-8deg);
+
+    }
+
+}
+
+
+/* ========================================= */
+/* POKÉBOLA DESAPARECENDO */
+/* ========================================= */
+
+@keyframes pokebolaSaindo {
+
+    0% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
+
+
+/* ========================================= */
+/* EFEITO DE ABERTURA */
+/* ========================================= */
+
+body {
+    animation: fundoPokemon 5s ease;
+}
+
+@keyframes fundoPokemon {
+
+    0% {
+        overflow: hidden;
+    }
+
+    99% {
+        overflow: hidden;
+    }
+
+    100% {
+        overflow-x: hidden;
+    }
+
+}
+
+
+/* ========================================= */
+/* RESPONSIVO */
+/* ========================================= */
+
+@media (max-width: 600px) {
+
+    body::before {
+
+        font-size: 30px;
+
+        letter-spacing: 1px;
+
+        padding: 20px;
+
+    }
+
+    body::after {
+
+        width: 60px;
+
+        height: 60px;
+
+        font-size: 45px;
+
+        right: 8%;
+
+        top: 12%;
+
+    }
+
+}
